@@ -21,8 +21,8 @@
         <div class="table-responsive">
             <input type="text" id="search" placeholder="Search">
             <div class="loaderebox" style="display: none;">
-                <span class="loader"></span>
-                 uploading...
+                <!-- <span class="loader"></span> -->
+                 Loading Content...
             </div>    
             <table class="table text-center" id="table">
                 <thead>
