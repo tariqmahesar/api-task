@@ -1,0 +1,21 @@
+// import scss files (for Vendors)
+@import 'vendors/bootstrap.min';
+@import 'vendors/intlTelInput.min';
+
+
+
+// import scss files (for Global)
+@import 'global/fonts';
+@import 'global/variables';
+@import 'global/mixins';
+@import 'global/typography';
+@import 'global/form-elements';
+@import 'global/global';
+@import 'global/icons';
+
+
+// import scss files (for Components)
+@import 'components/header';
+@import 'components/footer';
+@import 'components/popups';
+@import 'components/main';

@@ -1,0 +1,57 @@
+html {
+    font-family: $primaryFont !important;
+    font-weight: normal;
+    font-weight: 400;
+    color: $iBlack;
+    line-height: 1.4;
+}
+
+body {
+    font-family: $primaryFont !important;
+    font-weight: normal;
+    font-weight: 400;
+    color: $iBlack;
+    line-height: 1.4;
+    @include fontCalcSize(16, 12);
+}
+
+.primaryfont {
+    font-family: $primaryFont;
+}
+
+h3 {
+    @include fontCalcSize(26, 16);
+    color: $iSecondary;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+h4 {
+    @include fontCalcSize(21, 14);
+    strong {
+        font-weight: 700;
+    }
+}
+h5{
+    @include fontCalcSize(24, 14);
+    font-weight: 700;
+    color: $NewBlue;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid $iGray2;
+}
+
+h6{
+    @include fontCalcSize(18, 14);
+    color: $shortHeadColor;
+    margin: 0 0 15px; font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    @include fontCalcSize(14, 12);
+}

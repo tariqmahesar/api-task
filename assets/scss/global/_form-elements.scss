@@ -1,0 +1,1314 @@
+.form-group {
+
+    &.is--disabled {
+        border-color: $iGray;
+        color: $iGray;
+    }
+
+    &.is--error {
+        border-color: $iSecondary;
+
+        .label {
+            top: -14px;
+            color: $iSecondary;
+        }
+
+        &.is--used {
+
+            .form-group,
+            .form-control {
+                color: $white;
+            }
+        }
+
+        span {
+            &.error-text {
+                display: block;
+            }
+        }
+
+        .label,
+        .error-text {
+            color: $iSecondary;
+        }
+    }
+
+    &.row-fields {
+        display: flex;
+        align-items: center;
+
+        >.label {
+            flex: 0 0 20%;
+            max-width: 20%;
+            margin-bottom: 0;
+        }
+
+        .form-control {
+            flex: 1;
+            height: 46px;
+            border-color: $iGray2;
+        }
+    }
+}
+
+.textarea,
+.form-control {
+    @include fontCalcSize(13, 12);
+    color: $iBlack;
+    background-color: $white;
+    line-height: normal;
+    font-weight: 400;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 2px;
+    height: 30px;
+    text-align: left;
+    border: 1px solid $iGray2;
+    transition: all .35s ease;
+    @include placeholder($iGray13);
+
+    &.error-field {
+        border-color: red;
+    }
+
+    &:hover {
+        border-color: $iGray2;
+    }
+
+    &:focus {
+        border-color: $iBlack;
+        box-shadow: 0 0 5px 2px rgba($black, .2);
+    }
+
+    &[read-only],
+    &.read-only {
+        color: $iBlack;
+        background-color: $white;
+    }
+
+    &.is--disabled {
+        background-color: $white;
+        color: $iGray;
+    }
+
+    &.is--focus {
+        background-color: $white;
+    }
+
+    &.is--used {
+        background-color: $white;
+    }
+}
+
+.textarea {
+    height: 160px;
+}
+
+select {
+    width: 100%;
+}
+
+.label {
+    @include fontCalcSize(14, 12);
+    font-weight: 700;
+    color: $iNavyDark;
+    position: relative;
+    display: block;
+    margin-bottom: 18px;
+
+    &.nomgb {
+        margin-bottom: 0;
+    }
+
+    &.mgb10 {
+        margin-bottom: 10px;
+    }
+
+    &.callDone {
+        margin-bottom: 0px;
+
+        svg {
+            width: 24px;
+        }
+    }
+
+    &.markComplete {
+        i {
+            color: $iBlue;
+            margin-right: 21px;
+            display: inline-block;
+            vertical-align: middle;
+            @include fontCalcSize(22, 16);
+        }
+    }
+}
+
+.animateLable {
+    position: relative;
+    .label {
+        left: 10px;
+        top: 50%;
+        font-size: 11px;
+        margin-bottom: 0;
+        transition: all .35s ease;
+        position: absolute;
+        font-weight: 400;
+        margin-top: -8px;
+    }
+    .form-control {
+        padding: 20px 10px 6px;
+        font-size: 12px;
+    }
+    &.is--focus,
+    &.is--used {
+        .label {
+            top: 12px;
+            font-size: 9px;
+        }
+    }
+}
+
+.iti,
+select {
+    width: 100%;
+    @include fontCalcSize(14, 12);
+}
+
+.iti--separate-dial-code {
+    .iti__selected-dial-code {
+        @include fontCalcSize(14, 12);
+        font-weight: 400;
+    }
+}
+
+.iti__flag{
+    background-image:url('../img/icons/flags.png');
+
+    @media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){
+        background-image:url('../img/icons/flags@2x.png')
+    }
+}
+
+.custom-checkbox {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    vertical-align: middle;
+
+    input {
+        opacity: 0;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        z-index: 1;
+        left: -1px;
+        top: -1px;
+
+        &:checked,
+        [checked="checked"] {
+            ~.as-checkbox {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    label {
+        @include fontCalcSize(14, 12);
+    }
+
+    &:hover {
+        border-color: $iGray;
+    }
+
+    &:focus {
+        border-color: $iBlack;
+    }
+
+    .as-checkbox {
+        border: 1px solid $iNavyDark;
+        width: 14px;
+        height: 14px;
+        border-radius: 2px;
+        appearance: none;
+        transition: all .35s ease;
+        position: absolute;
+        text-align: center;
+        background-color: $white;
+        margin-bottom: 0px;
+
+        &:after {
+            content: "\e91e";
+            font-family: $iconFont;
+            font-size: 9px;
+            font-weight: 700;
+            width: 12px;
+            height: 12px;
+            opacity: 0;
+            display: inline-block;
+            vertical-align: top;
+            line-height: 13px;
+        }
+    }
+}
+
+.custom-radio {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $iGray3;
+    border-radius: 50%;
+    padding: 2px;
+    flex-shrink: 0;
+
+    input {
+        opacity: 0;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        z-index: 1;
+        left: -1px;
+        top: -1px;
+
+        &:checked,
+        [checked="checked"] {
+            ~.as-radio {
+                background-color: $iBlue;
+            }
+        }
+    }
+
+    &:hover {
+        border-color: $black;
+    }
+
+    &:focus {
+        border-color: $black;
+    }
+
+    .as-radio {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        appearance: none;
+        transition: all .35s ease;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        background-color: transparent;
+    }
+}
+
+.search-box {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0;
+
+    .form-control {
+        padding-right: 40px;
+    }
+
+    .btn {
+        background-color: transparent;
+        border-radius: 2px;
+        height: 28px;
+        width: 28px;
+        text-align: center;
+        border: 0;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        margin: 0;
+        line-height: 0;
+        padding: 0;
+        color: $iGreedmedium;
+
+        >i {
+            padding: 0;
+        }
+
+        &:hover {
+            background-color: $iGray;
+        }
+    }
+}
+
+.btn {
+    @include fontCalcSize(14, 12);
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 3px;
+    text-align: center;
+    transition: all .35s ease;
+    line-height: 1.2;
+
+    i {
+        padding-right: 5px;
+        font-size: 12px;
+    }
+
+    .ic-quest {
+        margin-right: 5px;
+
+        path {
+            fill: $iYellowDark !important;
+        }
+    }
+
+    .ic-caret {
+        fill: $white;
+        width: 10px;
+        height: 6px;
+        transform: rotate(-90deg);
+        margin-right: 5px;
+        margin-top: -1px;
+    }
+
+    .ic-logout {
+        fill: $white;
+        width: 14px;
+        height: 11px;
+        margin-right: 6px;
+        margin-top: -1px;
+    }
+
+    &.btn-primary {
+        background-color: $iPrimary;
+        border-color: $iPrimary;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iPrimary, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iPrimary, .8);
+            border-color: rgba($iPrimary, .9);
+            color: $white;
+        }
+        &.sty1{
+            background-color: $iRedDark;
+            border-color: $iRedDark;
+            @include fontCalcSize(20, 13);
+            padding: 12px 30px;
+            border-radius: 6px;
+        }
+        &.btn-dial {
+            min-width: 170px;
+            border: 2px solid #80e496;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 6px 15px;
+
+            span {
+                display: inline-block;
+                line-height: 14px;
+            }
+
+            span,
+            i {
+                margin-top: -5px;
+            }
+
+            i {
+                margin-right: 40px;
+                @include fontCalcSize(15, 12);
+            }
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $iSecondary;
+        border-color: $iSecondary;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iSecondary, 0.3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: $iPrimary;
+            border-color: $iPrimary;
+            color: $white;
+        }
+        &.sty1{
+            background-color: $iPurple;
+            border-radius: 0;
+            border-color: $iPurple;
+            padding: 8px 20px;
+        }
+        &.is-active {
+            background-color: $iNavy;
+            border-color: $iNavy;
+            color: $white;
+            position: relative;
+
+            &:not(:disabled):not(.disabled).active:focus,
+            &:not(:disabled):not(.disabled):active:focus,
+            &.focus,
+            &:focus {
+                box-shadow: 0 0 2px 0.2rem rgba($iNavy, .3);
+            }
+
+            &:not(:disabled):not(.disabled).active,
+            &:not(:disabled):not(.disabled):active,
+            &:hover,
+            &.focus,
+            &:focus {
+                background-color: $iNavy;
+                border-color: $iNavy;
+                color: $white;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 10px;
+                height: 10px;
+                transform: rotate(45deg);
+                background-color: $iNavy;
+                transition: all .35s ease;
+            }
+        }
+    }
+
+    &.btn-red {
+        background-color: $iRed;
+        border-color: $iRed;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iRed, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iRed, .8);
+            border-color: rgba($iRed, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-iRedDark {
+        background-color: $iRedDark;
+        border-color: $iRedDark;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iRedDark, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iRedDark, .8);
+            border-color: rgba($iRedDark, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-iRedMedium {
+        background-color: $iRedMedium;
+        border-color: $iRedMedium;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iRedMedium, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iRedMedium, .8);
+            border-color: rgba($iRedMedium, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-iblack {
+        background-color: $iBlack;
+        border-color: $iBlack;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iBlack, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iBlack, .8);
+            border-color: rgba($iBlack, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-iNavy {
+        background-color: $iNavy;
+        border-color: $iNavy;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iNavy, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iNavy, .8);
+            border-color: rgba($iNavy, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-iBlue {
+        background-color: $iBlue;
+        border-color: $iBlue;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iBlue, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iNavy, .8);
+            border-color: rgba($iNavy, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-newBlue {
+        background-color: $NewBlue;
+        border-color: $NewBlue;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($NewBlue, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iNavy, .8);
+            border-color: rgba($iNavy, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-igreen {
+        padding: 12px 20px;
+        background-color: $iGreen2;
+        border-color: $iGreen2;
+        color: $white;
+        border-radius: 0;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iBlue, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iNavy, .8);
+            border-color: rgba($iNavy, .8);
+            color: $white;
+        }
+    }
+
+    &.btn-grey {
+        background-color: $iGray2;
+        border-color: $iGray2;
+        color: $iBlack1;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iGray2, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iGray2, .8);
+            border-color: rgba($iGray2, .8);
+            color: $iBlack1;
+        }
+
+        &.is-active {
+            background-color: $iRed;
+            border-color: $iRed;
+            color: $white;
+
+            &:not(:disabled):not(.disabled).active:focus,
+            &:not(:disabled):not(.disabled):active:focus,
+            &.focus,
+            &:focus {
+                box-shadow: 0 0 2px 0.2rem rgba($iRed, .3);
+            }
+
+            &:not(:disabled):not(.disabled).active,
+            &:not(:disabled):not(.disabled):active,
+            &:hover,
+            &.focus,
+            &:focus {
+                background-color: rgba($iRed, .8);
+                border-color: rgba($iRed, .8);
+                color: $white;
+            }
+
+            &.btn-green {
+                background-color: $iPrimary;
+                border-color: $iPrimary;
+                color: $white;
+
+                &:not(:disabled):not(.disabled).active:focus,
+                &:not(:disabled):not(.disabled):active:focus,
+                &.focus,
+                &:focus {
+                    box-shadow: 0 0 2px 0.2rem rgba($iPrimary, .3);
+                }
+
+                &:not(:disabled):not(.disabled).active,
+                &:not(:disabled):not(.disabled):active,
+                &:hover,
+                &.focus,
+                &:focus {
+                    background-color: rgba($iPrimary, .8);
+                    border-color: rgba($iPrimary, .9);
+                    color: $white;
+                }
+
+                &.arrowBotCenter {
+                    background-color: $iPrimary;
+
+                    &:after {
+                        background-color: $iPrimary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.btn-grey7 {
+        background-color: $iGray7;
+        border-color: $iGray1;
+        color: $iBlue;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iGray7, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: rgba($iGray7, .8);
+            border-color: rgba($iGray1, .8);
+            color: $iBlue;
+        }
+    }
+
+    &.btn-iGray10{
+        background-color: $iGray10;
+        border-color: $iGray10;
+        color: $black;
+        @include fontCalcSize(18,14);
+        font-weight: 500;
+        height: 47px;
+        padding: 12px 0;
+        border-radius: 0px;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iGray10, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,&:not(:disabled):not(.disabled).is-active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: $iGray11;
+            border-color: $iGray11;
+            color: $white;
+        } 
+    }
+
+    &.btn-link {
+        color: $iPrimary;
+        padding: 12px 0;
+        font-weight: 600;
+
+        svg,
+        img {
+            width: 17px;
+            height: 13px;
+            display: inline-block;
+            margin-left: 15px;
+
+            path {
+                fill: $iPrimary;
+                stroke: none;
+                transition: fill .15s ease-in-out;
+            }
+        }
+
+        &:hover,
+        &.focus,
+        &:focus {
+            color: #c20828;
+
+            svg {
+                path {
+                    fill: #c20828;
+                }
+            }
+        }
+    }
+
+    &.btn-outline-primary {
+        color: $iBlue;
+        border-color: $iBlue;
+        padding: 3px 15px;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iBlue, .3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: $iBlue;
+            border-color: $iBlue;
+            color: $white;
+        }
+    }
+
+    &.btn-underline-primary {
+        color: $iBlue;
+        border-bottom: 1px solid $iBlue;
+        padding: 0;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iBlue, .3);
+        }
+    }
+
+    &.btn-underline-primary2 {
+        color: $newlightBlue;
+        border-bottom: 1px solid $newlightBlue;
+        padding: 0;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &.big-btn {
+        padding: 11px 10px;
+        @include fontCalcSize(17, 12);
+    }
+
+    &.fs-12 {
+        font-size: 12px;
+    }
+
+    &.fs-14 {
+        @include fontCalcSize(14, 12);
+    }
+
+    &.sm-pd {
+        padding: 5px 10px;
+    }
+
+    &.md-pd {
+        padding: 5px 20px;
+    }
+    &.md-pd2 {
+        padding: 8px 35px;
+    }
+    &.xl-pd {
+        padding: 11px 20px;
+        @include fontCalcSize(17, 12);
+    }
+
+    &.arrowBotCenter {
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            background-color: transparent;
+            transition: all .35s ease;
+        }
+    }
+
+    &.min-wd100 {
+        min-width: 100px;
+    }
+
+    &.min-wd120 {
+        min-width: 120px;
+    }
+
+    &.min-wd140 {
+        min-width: 140px;
+    }
+
+    &.min-wd191 {
+        min-width: 191px;
+    }
+
+    &.min-wd23 {
+        min-width: 230px;
+    }
+
+    &.min-wd26 {
+        min-width: 260px;
+    }
+
+    &.btn-diamond {
+        box-shadow: 0 1px 4px 0 rgba($black, .27);
+        background: rgb(203, 203, 203);
+        background: linear-gradient(to bottom, rgba(203, 203, 203, .5) 0%, rgba(255, 255, 255, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cbcbcb', endColorstr='#ffffff', GradientType=0);
+    }
+
+    &.btn-gold {
+        box-shadow: 0 1px 4px 0 rgba($black, .27);
+        background: rgb(255, 244, 147);
+        background: linear-gradient(to bottom, rgba(255, 244, 147, 1) 0%, rgba(255, 239, 138, 1) 21%, rgba(255, 193, 45, .8) 35%, rgba(255, 244, 147, 1) 53%, rgba(255, 193, 45, 1) 86%, rgba(255, 244, 147, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff493', endColorstr='#fff493', GradientType=0);
+    }
+
+    &.btn-maroran {
+        border: 1px solid $iOrange2;
+        background: #930050;
+        background: linear-gradient(to bottom, #930050 0%, #ed3e01 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#930050', endColorstr='#ed3e01', GradientType=0);
+        color: $white;
+
+        .js-tosvg {
+            margin-left: 10px;
+
+            path {
+                fill: $white !important;
+            }
+        }
+
+        &:hover {
+            background: #ed3e01;
+            background: linear-gradient(to bottom, #ed3e01 0%, #930050 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed3e01', endColorstr='#930050', GradientType=0);
+        }
+    }
+
+    &.btn-iGreedmedium {
+        background-color: $iGreedmedium;
+        border-color: $iGreedmedium;
+        color: $white;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iGreedmedium, 0.3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background-color: $iPrimary;
+            border-color: $iPrimary;
+            color: $white;
+        }
+    }
+
+    &.btn-save {
+        width: 136px;
+        height: 34px;
+        @include fontCalcSize(18, 12);
+        color: $white;
+        font-weight: 600;
+        background: $btnSaveColor;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iBlack, 0.3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background: $iBlack;
+        }
+    }
+
+    &.btn-iSkyBlue1 {
+        
+        color: $white;
+        background: $iSkyBlue1;
+        border-color: $iSkyBlue1;
+        border-radius: 12px;
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba($iSkyBlue1, 0.3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background: $iBlack;
+        }
+    }
+
+    &.gradient-3 {
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 2px 0.2rem rgba(#f09c34, 0.3);
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        &:hover,
+        &.focus,
+        &:focus {
+            background: #f09c34;
+            background: linear-gradient(to bottom, #f09c34 0%, #f5bf7a 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09c34', endColorstr='#f5bf7a', GradientType=0);
+            border: 1px solid #f09c34;
+        }
+    }
+
+    &.disabled,
+    &:disabled,
+    [disabled],
+    [disabled="disabled"] {
+        background-color: $iGrayDark;
+        border-color: $iGrayDark;
+        color: $white;
+        cursor: none;
+    }
+}
+
+button,
+.btn {
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.is--used {
+    .textarea,
+    .form-control {
+        border-color: $iBlack;
+    }
+}
+
+.dropdown-box {
+    position: relative;
+
+    .js-dropdownbtn {
+        cursor: pointer;
+    }
+
+    .dropdown {
+        background-color: $white;
+        box-shadow: 0 0 5px 1px rgba($black, .17);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 2;
+        min-width: 100px;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: all .35s ease;
+        border-radius: 3px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 25px;
+            top: -8px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid $white;
+        }
+
+        .dd-head {
+            .js-tosvg {
+                width: 10px;
+                height: 14px;
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    @include fontCalcSize(14, 12);
+                    color: $iBlack;
+                    font-weight: 600;
+                    border-top: 1px solid $iGray1;
+                    padding: 10px 20px;
+                    display: block;
+
+                    &:hover {
+                        background-color: rgba($iPrimary, .05);
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        border-top: 0;
+                    }
+                }
+            }
+        }
+
+        &.rt-arrow {
+            &:before {
+                left: auto;
+                right: 10px;
+            }
+        }
+
+        &.no-aarow {
+            &:before {
+                display: none;
+            }
+        }
+
+        &.rt-side {
+            left: initial;
+            right: 0;
+        }
+
+        .action-row {
+            padding: 20px;
+        }
+
+        &.min-wd400 {
+            min-width: 400px;
+        }
+
+        &.min-wd160 {
+            min-width: 160px;
+        }
+    }
+
+    .overlaydd {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    &.show-dd {
+        .dropdown {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: inherit;
+            transform: translateY(0);
+        }
+
+        .overlaydd {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: inherit;
+        }
+    }
+}
+
+.dd-head {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid $iBlack;
+
+    >i {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $iRed1;
+        border-radius: 4px;
+    }
+
+    .js-tosvg {
+        width: 10px;
+        height: 14px;
+    }
+
+    h5 {
+        @include fontCalcSize(16, 12);
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+        color: $iBlack;
+        border-bottom: 0;
+    }
+}
+
+.flatpickr-input[readonly] {
+    background-color: $white;
+}
+
+.ic-upicon {
+    position: relative;
+
+    >i {
+        position: absolute;
+        top: 0;
+        @include fontCalcSize(16, 14);
+        height: 16px;
+        left: 8px;
+        bottom: 0;
+        margin: auto;
+        color: $iSecondary;
+    }
+
+    .form-control {
+        padding-left: 36px;
+    }
+}
+
+.flatpickr-current-month {
+
+    .flatpickr-monthDropdown-months,
+    input.cur-year {
+        @include fontCalcSize(16, 12);
+    }
+}
+
+.flatpickr-months {
+
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+        >svg {
+            vertical-align: top;
+        }
+    }
+}

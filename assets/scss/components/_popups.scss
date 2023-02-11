@@ -1,0 +1,598 @@
+/* ====================================
+Popup CSS
+==================================== */
+
+.c-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+
+    .popup {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        max-height: 90%;
+        width: 100%;
+        opacity: 0;
+        top: 40%;
+        transition: all .3s 0s;
+        border: 1px solid $iGray2;
+        border-radius: 4px;
+        &.ht-90{
+            height: 90%;
+        }
+        .popup-wrap {
+            background: $white;
+            height: 100%;
+            box-shadow: 0 3px 7px 0 rgba($black, 0.25);
+            overflow-y: auto;
+        }
+
+        .c-close {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            z-index: 999;
+            @include fontCalcSize(38, 16);
+            color: $popupCrossColor;
+            background-color: $white;
+            border-radius: 50%;
+
+            &:hover {
+                color: $black;
+            }
+        }
+
+        .popup-head {
+            background-color: $iGray6;
+            color: $iBlack1;
+            padding: 15px 30px;
+            text-align: center;
+
+            &.bgred {
+                background-color: $iRedMedium;
+                color: $white;
+            }
+
+            h4 {
+                @include fontCalcSize(18, 14);
+                font-weight: 700;
+                margin: 0;
+            }
+        }
+
+        &.popup--full-screen {
+            top: 0;
+            left: 0;
+            transform: none;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            max-width: none;
+        }
+
+        &.active {
+            top: 50%;
+            opacity: 1;
+            transition-delay: .3s;
+        }
+    }
+
+    .overlay {
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        transition: all .3s;
+    }
+
+    &.popup--open {
+        .overlay {
+            background: rgba($white, .6);
+        }
+    }
+}
+
+/* ====================================
+END - Popup CSS
+==================================== */
+
+/* ====================================
+Popup Close BUtton
+==================================== */
+.c-close {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+}
+
+
+// popups styling
+.c-popup {
+    .popup {
+
+        &.md-popup1 {
+            width: 1140px;
+        }
+
+        &.sm-popup {
+            width: 500px;
+        }
+
+        &.md-popup {
+            width: 750px;
+        }
+
+        &.lg-popup {
+            width: 1220px;
+        }
+
+        &.popup-style1 {
+
+            .popupContent {
+                background-color: $white;
+                padding: 30px;
+
+                &.pd-20 {
+                    padding: 20px;
+                }
+            }
+
+            label {
+                @include fontCalcSize(16, 12);
+                display: block;
+                margin-bottom: 5px;
+                color: $iBlack1;
+                font-weight: 700;
+            }
+
+            .s-radioBox {
+                align-items: center;
+                display: flex;
+
+                label {
+                    color: $iGray3;
+                    @include fontCalcSize(14, 12);
+                    font-weight: 700;
+                    margin: 0 0 0 5px;
+                }
+            }
+
+            .action-row {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .orbutton {
+                background-color: $iRedMedium;
+                width: 40px;
+                height: 40px;
+                color: $white;
+                @include fontCalcSize(14, 12);
+                font-weight: 700;
+                text-transform: uppercase;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+
+            .mcall {
+                @include fontCalcSize(22, 16);
+                color: $iRedDark;
+                vertical-align: middle;
+            }
+        }
+        &.popup-style2 {
+            // overflow-y: auto;
+            box-shadow: 0 0px 25px -5px rgba($black, .4);
+            .popupContent {
+                background-color: $white;
+                padding: 60px;
+                h4{
+                    @include fontCalcSize(30 , 16);
+                    font-weight: 600;
+                    color: $black;
+                    margin-bottom: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    i{
+                        font-style: normal;
+                        flex:0 0 20px;
+                        max-width:20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background-color: $black;
+                        color: $white;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        @include fontCalcSize(13 , 10);
+                        font-weight: 400;
+                        margin-right: 10px;
+                        margin-left: -35px;
+                        margin-top: 4px;
+                    }
+                }
+            }
+            .mtb-60{
+                margin: 60px 0;
+            }
+            .form-control{
+                height: 55px;
+                border: 1px solid $iGray14;
+                border-radius: 7px;
+            }
+            label {
+                @include fontCalcSize(16, 12);
+                display: block;
+                margin-bottom: 10px;
+                color: $iBlue2;
+                font-weight: 600;
+            }
+            .checking {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                padding-left: 32px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 16px;
+                color: $iGray3;
+                user-select: none;
+                font-weight: 700;
+                padding: 20px 0 0;
+                text-align: left;
+                .custom-checkbox {
+                    margin-right: 15px;
+                    background: $iSecondary;
+                }
+                @media(max-width: 575px){
+                    font-size: 14px;
+                }
+            }
+            .search-box{
+                margin-bottom: 1rem;
+                .btn{
+                    height: 100%;
+                    width: 35px;
+                    i{
+                        color: $black;
+                    }
+                }
+            }
+            .s-checkBox {
+                align-items: center;
+                display: flex;
+                margin: 50px 0;
+
+                label {
+                    color: $black;
+                    @include fontCalcSize(14, 12);
+                    font-weight: 700;
+                    margin: 0 0 0 5px;
+                }
+                &.sty1{
+                    margin: 35px 0;
+                    label{
+                        color: $iGray15;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .s-radioBox {
+                align-items: center;
+                display: flex;
+                margin: 50px 0;
+                .custom-radio{
+                    border:1px solid $iPurple;
+                    input{
+                        &:checked,
+                        [checked="checked"] {
+                            ~.as-radio {
+                                background-color: $iPurple;
+                            }
+                        }
+                    }
+                }
+                label {
+                    color: $black;
+                    @include fontCalcSize(16, 12);
+                    font-weight: 600;
+                    margin: 0 0 0 20px;
+                }
+                &.sty1{
+                    margin: 35px 0;
+                }
+                &.sty2{
+                    margin: 15px 0;
+                }
+            }
+
+            .action-row {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            
+        }
+        &.popup-style3 {
+            // overflow-y: auto;
+            box-shadow: 0 0px 25px -5px rgba($black, .4);
+            .popupContent {
+                background-color: $white;
+                padding: 0px;
+                
+            }
+         
+        }
+    }
+}
+.payment-mode{
+    border: 2px solid $iPurple;
+    border-radius: 10px;
+    padding: 15px 40px;
+    &.sty1{
+        padding: 15px 40px 70px; 
+    }
+}
+.inner_form {
+    padding: 0px;
+    border: 2px solid $iPurple;
+    text-align: center;
+    width: 80%;
+    margin: 30px auto 0;
+    border-radius: 10px;
+    padding-bottom: 40px;
+    .inner-wrap{
+        padding:0 20px 20px;
+    }
+
+    h2 {
+        background: $iPurple;
+        padding: 10px;
+        color: #fff;
+        font-weight: 700;
+        @include fontCalcSize(19 , 14);
+    }
+
+    p {
+        padding: 20px 0 10px;
+        margin: 0;
+        color: $black;
+        @include fontCalcSize(17 , 13);
+        a {
+            color: $iPrimary;
+            font-weight: 600;
+            font-size: 15px;
+
+            &:hover {
+                text-decoration: underline!important;
+            }
+        }
+        br{
+            @media (max-width: 767px){
+                display: none;
+            }
+        }
+    }
+
+    
+
+    .number-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $black;
+        font-size: 20px;
+        font-weight: 700;
+
+        .iti__flag {
+            display: inline-block;
+            transform: scale(1.3);
+        }
+
+        @media(max-width: 767px){
+            font-size: 17px;
+        }
+        @media(max-width: 575px){
+            font-size: 15px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .numbText{
+        margin-right: 10px;
+        font-size: 16px;
+        @media(max-width: 575px){
+            flex: 0 0 100%;
+            font-size: 14px;
+        }
+    }
+
+    .dialling-code{
+        padding: 0 4px 0 8px;
+        border-right: 1px solid $iGray3;
+    }
+
+    .number{
+        padding-left: 4px;
+    }
+
+    .international-phone{
+        padding:20px 27% 20px;
+        @media(max-width: 1600px){
+            padding:20px 23% 20px;
+        }
+        @media(max-width: 1199px){
+            padding:20px 17% 20px;
+        }
+        @media(max-width: 575px){
+            padding:20px 0% 20px;
+        }
+        .iti{
+            display: block;
+        }
+        input{
+            width: 100%;
+            margin: 0;
+            display: block;
+            font-size: 13px;
+            min-width: 100%;
+
+            @media(max-width: 575px){
+                font-size: 11px;
+            }
+        }
+
+        a.btn{
+            padding: 8px 50px;
+            display: block;
+            @media(max-width: 575px){
+                padding: 8px 20px;
+                
+            }
+        }
+    }
+    
+    .number_ser {
+        list-style: none;
+        text-align: center;
+        color: $iGray3;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 auto 10px auto;
+        display: block;
+        width: 100%;
+    }
+
+    .otpemail {
+        color: $iGray;
+        font-size: 15px;
+    }
+    @media(max-width: 767px){
+        padding: 20px 20px 40px;
+        
+    }
+    .verification-sec {
+        h3{
+            color: $iBlack;
+            font-weight: 700;
+            text-align: center;
+            margin: 10px 0 20px 0;
+            line-height: 1.2;
+        }
+        input{
+            text-align: center;
+			max-width: 200px;
+            height: 50px;
+            font-size: 24px;
+			font-weight: 700;
+            margin: 20px auto 0;
+        }
+		.code_expire {
+            text-align: center;
+            font-weight: 700;
+            margin: 20px 0 10px;
+			@include fontCalcSize(16 , 12);
+            strong {
+                &.countdown{
+                    color: $iPurple;
+                }
+            }
+        }
+        .veri_code {
+            color: $black;
+            @include fontCalcSize(28 , 18);
+            font-weight: 500;
+            padding: 5px 22px;
+            border: 2px $iPurple solid;
+            border-radius: 0px;
+            max-width: 170px;
+            margin: 7px auto;
+            letter-spacing: 4px;
+            text-align: center;
+            display: block;
+        }
+    }
+    
+}
+
+.wdsty1 {
+    .table-body {
+        li {
+            padding: 6px 15px;
+        }
+    }
+}
+
+.odd-bg-color {
+    .table-body {
+        .dtbl {
+            &:nth-child(odd) {
+                background: $iGray7;
+            }
+        }
+    }
+}
+
+.payment-table{
+    .headtable{
+        background-color: $iRedDark;
+        padding: 15px 0;
+        li{
+            text-align: center;
+        
+            p{
+                color: $white;
+                margin: 0;
+                @include fontCalcSize(12 , 10);
+            }
+        }
+    }
+    .bodytable{
+        background-color: $white;
+        border: 1px solid $iRedDark;
+        text-align: center;
+        li{
+            border: 1px solid $iGray;
+            padding: 15px 0;
+            p{
+                font-weight: 700;
+                margin: 0;
+                @include fontCalcSize(12 , 10);
+            }
+        }
+    }
+}
+.payment-failed{
+    p{
+        line-height: 2;
+        padding: 0 30px;
+        margin: 0;
+    }
+}
+.mou-sec{
+    .center-text{
+        padding: 70px 0 0;
+        h5{
+            border: 0;
+            color: $iGray16;
+        }
+        p{
+            @include fontCalcSize(12 , 10);
+            line-height: 2;
+            
+        }
+    }
+}
